@@ -1,5 +1,5 @@
 {% set name = "dyff" %}
-{% set version = "1.7.1" %}
+{% set version = "1.8.0" %}
 
 {% set goname = "github.com/homeport/" + name.lower() %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -11,7 +11,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: db129db79af3c5e284eb939041a9e21c4fd2351ecacadc81cf095d7d447a9570
+    sha256: f04e155c1691e82cf9cfc5aedfce95d32f70a120e173d4d23c53ca6549182278
 
 build:
   number: 0
