@@ -11,7 +11,7 @@ Summary: A diff tool for YAML files, and sometimes JSON
 
 Development: https://github.com/homeport/dyff
 
-Documentation: https://github.com/homeport/dyff/blob/1.9.1/README.md
+Documentation: https://github.com/homeport/dyff/blob/1.9.2/README.md
 
 Current build status
 ====================
