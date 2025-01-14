@@ -1,32 +1,19 @@
-{% set name = "dyff" %}
 {% set version = "1.9.4" %}
 
-{% set goname = "github.com/homeport/" + name.lower() %}
-{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
-
 package:
-  name: {{ name|lower }}
+  name: dyff
   version: {{ version }}
 
 source:
-  - folder: {{ pkg_src }}
-    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 77e48f951de76636080bfe067293262a491fd7b26511b189c5c655cdb7c24516
+  url: https://github.com/homeport/dyff/archive/v{{ version }}.tar.gz
+  sha256: 77e48f951de76636080bfe067293262a491fd7b26511b189c5c655cdb7c24516
 
 build:
   number: 0
-  script:
-    - GOBIN=$(go env GOBIN)  # [not win]
-    - FOR /F "delims=" %%i IN ('go env GOBIN') DO set "GOBIN=%%i"  # [win]
-    - pushd {{ pkg_src }}
-    - go build -v -o $GOBIN/{{ name }} -ldflags "-X github.com/homeport/dyff/internal/cmd.version={{ version }}" ./cmd/dyff  # [unix]
-    - go build -v -o %GOBIN%\{{ name }}.exe -ldflags "-X github.com/homeport/dyff/internal/cmd.version={{ version }}" .\cmd\dyff  # [win]
-    - go-licenses save ./cmd/dyff --save_path=./license-files  # [unix]
-    - go-licenses save .\cmd\dyff --save_path=.\license-files  # [win]
 
 requirements:
   build:
-    - {{ compiler('go') }} >=1.12
+    - {{ compiler('go-nocgo') }}
     - go-licenses
 
 test:
@@ -36,14 +23,14 @@ test:
 about:
   home: https://github.com/homeport/dyff
   license: MIT
-  license_family: MIT
   license_file:
-    - src/github.com/homeport/dyff/LICENSE
-    - src/github.com/homeport/dyff/license-files/
+    - LICENSE
+    - license-files/
   summary: A diff tool for YAML files, and sometimes JSON
-  doc_url: https://github.com/homeport/dyff/blob/{{ version }}/README.md
+  doc_url: https://github.com/homeport/dyff
   dev_url: https://github.com/homeport/dyff
 
 extra:
   recipe-maintainers:
+    - danielnachun
     - asford
