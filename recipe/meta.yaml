@@ -1,4 +1,4 @@
-{% set version = "1.10.1" %}
+{% set version = "1.10.2" %}
 
 package:
   name: dyff
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/homeport/dyff/archive/v{{ version }}.tar.gz
-  sha256: 8f20ba3580fbb45957211efdf5ac4fc60dd339a2f798db0ecf521c930fdb0be0
+  sha256: 36e103c1424e79135bb4ed54d6b66e6c3f057ff422a5838d3a80ffd4d9a3ef27
 
 build:
   number: 0
