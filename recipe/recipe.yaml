@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.11.1"
+  version: "1.11.2"
 
 package:
   name: dyff
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/homeport/dyff/archive/v${{ version }}.tar.gz
-  sha256: 88080eb1e15880ec7425d7425f6a459f93a9bcc1c4c8e38c2190dbf120fa4099
+  sha256: 9369237eed57b2246ea5cf155a40b51d19a374b3333400b2c27dda0b087e58ed
 
 build:
   number: 0
